@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation Popup</title>
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="popup-container" id="popupcontainer">
+
+    <!-- Pop-up Container -->
+    <div class="popup-container" id="popupContainer">
         <div class="popup">
-            <h2>Done!</h2>
+            <h2>Thank You for the Confirmation!</h2>
             <button class="close-btn" onclick="closePopup()">Close</button>
         </div>
     </div>
-    <div class="loading-container" id="loadingcontainer">
+
+    <!-- Loading Screen -->
+    <div class="loading-container" id="loadingContainer">
         <div class="spinner"></div>
     </div>
 
     <script>
+        // Show popup after 2 seconds, hiding the loading screen first
+setTimeout(() => {
+    const loadingContainer = document.getElementById('loadingContainer');
+    const popupContainer = document.getElementById('popupContainer');
+
+    // Hide the loading container
+    loadingContainer.style.opacity = '0';
     setTimeout(() => {
-        let loadingcontainer = document.getElementById('loadingcontainer');
-        let popupcontainer = document.getElementById('popupcontainer');
+        loadingContainer.style.display = 'none'; // Completely removes the spinner
+    }, 500);
 
-        loadingcontainer.style.opacity = '0';
-        setTimeout(() => {
-            loadingcontainer.style.display = 'none'; // Completely removes the spinner
-        }, 500);
+    // Show the confirmation popup
+    popupContainer.style.visibility = 'visible';
+    popupContainer.style.opacity = '1';
+}, 2000);
 
-        popupcontainer.style.visibility = 'visible';
-        popupcontainer.style.opacity = '1';
-    }, 2000);
-
+// Close popup function
 function closePopup() {
-    document.getElementById('popupcontainer').style.opacity = '0';
+    document.getElementById('popupContainer').style.opacity = '0';
     setTimeout(() => {
-        document.getElementById('popupcontainer').style.visibility = 'hidden';
+        document.getElementById('popupContainer').style.visibility = 'hidden';
     }, 500);
 }
     </script>

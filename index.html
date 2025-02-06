@@ -7,34 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="popup-box" id="popupbox">
+    <div class="popup-container" id="popupcontainer">
         <div class="popup">
             <h2>Done!</h2>
             <button class="close-btn" onclick="closePopup()">Close</button>
         </div>
     </div>
-    <div class="loading-box" id="loadingbox">
+    <div class="loading-container" id="loadingcontainer">
         <div class="spinner"></div>
     </div>
 
     <script>
     setTimeout(() => {
-        let loadingbox = document.getElementById('loadingbox');
-        let popupbox = document.getElementById('popupbox');
+        let loadingcontainer = document.getElementById('loadingcontainer');
+        let popupcontainer = document.getElementById('popupcontainer');
 
-        loadingbox.style.opacity = '0';
+        loadingcontainer.style.opacity = '0';
         setTimeout(() => {
-            loadingbox.style.display = 'none'; // Completely removes the spinner
+            loadingcontainer.style.display = 'none'; // Completely removes the spinner
         }, 500);
 
-        popupbox.style.visibility = 'visible';
-        popupbox.style.opacity = '1';
+        popupcontainer.style.visibility = 'visible';
+        popupcontainer.style.opacity = '1';
     }, 2000);
 
 function closePopup() {
-    document.getElementById('popupbox').style.opacity = '0';
+    document.getElementById('popupcontainer').style.opacity = '0';
     setTimeout(() => {
-        document.getElementById('popupbox').style.visibility = 'hidden';
+        document.getElementById('popupcontainer').style.visibility = 'hidden';
     }, 500);
 }
     </script>

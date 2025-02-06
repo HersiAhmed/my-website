@@ -10,7 +10,7 @@ body {
 }
 
 /* Loading Spinner */
-.loading-container {
+.loading-box {
     position: absolute;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ body {
 }
 
 /* Pop-up Box Styling */
-.popup-container {
+.popup-box {
     position: fixed;
     top: 0;
     left: 0;
